@@ -12,7 +12,7 @@ import { Command, CommandEmpty, CommandGroup, CommandItem } from "cmdk";
 import Image from "next/image";
 import { FC, useState } from "react";
 
-interface IndexMenuProps {}
+interface UserMenuProps {}
 
 const indexes = [
   { value: "ceramicDocs", label: "Ceramic Docs", owned: true },
@@ -23,7 +23,7 @@ const indexes = [
   { value: "gitcoinGrants", label: "Gitcoin Grants", owned: false },
 ];
 
-const IndexMenu: FC<IndexMenuProps> = ({}) => {
+const UserMenu: FC<UserMenuProps> = ({}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
@@ -33,27 +33,13 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
-          role="combobox"
-          aria-expanded={open}
-          variant="embed"
-          className="justify-start gap-2 px-3 py-2 h-min shadow-md font-bold bg-[#FF3600]/5 hover:bg-[#FF3600]/10 text-gray-6 rounded-full"
-        >
-          <Image
-            src="/ceramic-logo.png"
-            width={20}
-            height={20}
-            alt="brand logo"
-          />
-          {value ? (
-            indexes.find((index) => index.value === value)?.label
-          ) : (
-            <>
-              Ceramic Network
-              <span className="text-xs font-normal">({indexes.length})</span>
-            </>
-          )}
-        </Button>
+        <Image
+          src="/example-profile.png"
+          width={32}
+          height={32}
+          alt="brand logo"
+          className="cursor-pointer hover:bg-accent"
+        />
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-4">
         <Command>
@@ -124,4 +110,4 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
   );
 };
 
-export default IndexMenu;
+export default UserMenu;

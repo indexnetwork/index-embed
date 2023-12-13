@@ -1,14 +1,15 @@
 import { FC } from "react";
 import IndexMenu from "./IndexMenu";
+import UserMenu from "./UserMenu";
 
 interface AppProps {}
 
 const App: FC<AppProps> = ({}) => {
   return (
     <div className="min-h-[528px]">
-      <div className="flex justify-between">
+      <div className="flex justify-between max-h-[32px]">
         <IndexMenu />
-        <div className="w-8 h-8 bg-slate-400">pp</div>
+        <UserMenu />
       </div>
     </div>
   );
