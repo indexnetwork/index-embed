@@ -52,7 +52,7 @@ const Chat: FC<ChatProps> = ({
   });
   return (
     <>
-      <div className={cn("pb-[200px] pt-4 md:pt-10", className)}>
+      <div className={cn("pb-[100px] h-full pt-4 md:pt-10", className)}>
         {messages.length ? (
           <>
             <ChatList messages={messages} />
@@ -66,8 +66,11 @@ const Chat: FC<ChatProps> = ({
         id={id}
         isLoading={isLoading}
         stop={stop}
+        append={append}
         reload={reload}
         messages={messages}
+        input={input}
+        setInput={setInput}
       />
     </>
   );

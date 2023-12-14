@@ -1,6 +1,7 @@
 import { FC } from "react";
 import IndexMenu from "./IndexMenu";
 import UserMenu from "./UserMenu";
+import Chat from "./Chat";
 
 interface AppProps {}
 
@@ -11,6 +12,7 @@ const App: FC<AppProps> = ({}) => {
         <IndexMenu />
         <UserMenu />
       </div>
+      <Chat />
     </div>
   );
 };
