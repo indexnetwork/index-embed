@@ -56,7 +56,7 @@ export function ChatPanel({
             )
           )}
         </div>
-        <div className="py-4 px-2">
+        <div className="py-4">
           <ChatForm
             onSubmit={async (value) => {
               await append({

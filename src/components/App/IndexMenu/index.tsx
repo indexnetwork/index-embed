@@ -37,7 +37,7 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
           role="combobox"
           aria-expanded={open}
           variant="embed"
-          className="justify-start gap-2 px-3 py-2 h-min shadow-md font-bold bg-[#FF3600]/5 hover:bg-[#FF3600]/10 text-gray-6 rounded-full"
+          className="justify-start max-w-[187px] gap-2 px-3 py-2 h-min shadow-md font-bold bg-[#FF3600]/5 hover:bg-[#FF3600]/10 text-gray-6 rounded-full"
         >
           <Image
             src="/ceramic-logo.png"
@@ -55,7 +55,7 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-4">
+      <PopoverContent align="start" className="w-[200px] p-4">
         <Command>
           <CommandEmpty>No index found.</CommandEmpty>
           <DropdownMenuLabel className="text-gray-5 text-[10px]">

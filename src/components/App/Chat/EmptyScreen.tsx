@@ -32,12 +32,12 @@ export function EmptyScreen({
           You can include your indexes by connecting your wallet
         </p>
       </div>
-      <div className="mb-6 sm:flex gap-4">
+      <div className="mb-6 sm:flex gap-2">
         {exampleMessages.map((message) => (
           <div
             key={message.message}
             onClick={() => setInput(message.message)}
-            className="p-4 bg-gray-7 rounded-lg cursor-pointer hover:bg-gray-1 z-20 font-medium flex gap-4"
+            className="p-3 bg-gray-7 basis-1/2 rounded-lg cursor-pointer hover:bg-gray-1 z-20 font-medium flex gap-4"
           >
             <IconLightbulb className="" />
             <span className="text-xs basis-3/4">{message.message}</span>

@@ -41,7 +41,7 @@ const UserMenu: FC<UserMenuProps> = ({}) => {
           className="cursor-pointer hover:bg-accent"
         />
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-4">
+      <PopoverContent align="end" className="w-[200px] p-4">
         <Command>
           <CommandEmpty>No index found.</CommandEmpty>
           <DropdownMenuLabel className="text-gray-5 text-[10px]">

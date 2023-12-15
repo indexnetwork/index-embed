@@ -44,7 +44,7 @@ export function ChatForm({
       }}
       ref={formRef}
     >
-      <div className="relative flex flex-col w-full overflow-hidden max-h-10 grow bg-background sm:rounded-md sm:border">
+      <div className="relative flex flex-col w-full overflow-hidden max-h-10 text-gray-5 grow bg-background sm:rounded-lg sm:border sm:border-gray-2 sm:focus-within:border-gray-4">
         <Textarea
           ref={inputRef}
           tabIndex={0}
@@ -54,7 +54,7 @@ export function ChatForm({
           onChange={(e) => setInput(e.target.value)}
           placeholder={`Ask to ${indexName}`}
           spellCheck={false}
-          className="min-h-[40px] w-full resize-none bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
+          className="min-h-[40px] w-full border-black resize-none bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
         />
         <div className="absolute right-0 top-3 sm:right-4 max-h-5">
           <Tooltip>
@@ -63,10 +63,12 @@ export function ChatForm({
                 type="submit"
                 variant="ghost"
                 size="sm"
-                className="p-0 h-5"
+                className="p-0 h-5 disabled:opacity-100"
                 disabled={isLoading || input === ""}
               >
-                <IconSend />
+                <IconSend
+                  className={input === "" ? "text-gray-2" : "text-main-color"}
+                />
                 <span className="sr-only">Send message</span>
               </Button>
             </TooltipTrigger>
