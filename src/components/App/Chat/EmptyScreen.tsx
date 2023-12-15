@@ -34,7 +34,11 @@ export function EmptyScreen({
       </div>
       <div className="mb-6 sm:flex gap-4">
         {exampleMessages.map((message) => (
-          <div key={message.message} className="p-4 bg-gray-7 rounded-lg font-medium flex gap-4">
+          <div
+            key={message.message}
+            onClick={() => setInput(message.message)}
+            className="p-4 bg-gray-7 rounded-lg cursor-pointer hover:bg-gray-1 z-20 font-medium flex gap-4"
+          >
             <IconLightbulb className="" />
             <span className="text-xs basis-3/4">{message.message}</span>
           </div>

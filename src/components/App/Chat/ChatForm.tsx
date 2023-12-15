@@ -1,14 +1,12 @@
-import { Button, buttonVariants } from "@/components/ui/button";
-import { IconArrowElbow, IconPlus } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
+import { IconSend } from "@/components/ui/icons";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useEnterSubmit } from "@/lib/hooks/use-enter-submit";
-import { cn } from "@/lib/utils";
 import { UseChatHelpers } from "ai/react";
-import { useRouter } from "next/navigation";
 import * as React from "react";
 import Textarea from "react-textarea-autosize";
 
@@ -16,6 +14,7 @@ export interface ChatFormProps
   extends Pick<UseChatHelpers, "input" | "setInput"> {
   onSubmit: (value: string) => void;
   isLoading: boolean;
+  indexName?: string;
 }
 
 export function ChatForm({
@@ -23,10 +22,10 @@ export function ChatForm({
   input,
   setInput,
   isLoading,
+  indexName = "Index Name",
 }: ChatFormProps) {
   const { formRef, onKeyDown } = useEnterSubmit();
   const inputRef = React.useRef<HTMLTextAreaElement>(null);
-  const router = useRouter();
   React.useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
@@ -45,26 +44,7 @@ export function ChatForm({
       }}
       ref={formRef}
     >
-      <div className="relative flex flex-col w-full px-8 overflow-hidden max-h-60 grow bg-background sm:rounded-md sm:border sm:px-12">
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                router.refresh();
-                router.push("/");
-              }}
-              className={cn(
-                buttonVariants({ size: "sm", variant: "outline" }),
-                "absolute left-0 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4"
-              )}
-            >
-              <IconPlus />
-              <span className="sr-only">New Chat</span>
-            </button>
-          </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
-        </Tooltip>
+      <div className="relative flex flex-col w-full overflow-hidden max-h-10 grow bg-background sm:rounded-md sm:border">
         <Textarea
           ref={inputRef}
           tabIndex={0}
@@ -72,19 +52,21 @@ export function ChatForm({
           rows={1}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Send a message."
+          placeholder={`Ask to ${indexName}`}
           spellCheck={false}
-          className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
+          className="min-h-[40px] w-full resize-none bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
         />
-        <div className="absolute right-0 top-4 sm:right-4">
+        <div className="absolute right-0 top-3 sm:right-4 max-h-5">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
                 type="submit"
-                size="icon"
+                variant="ghost"
+                size="sm"
+                className="p-0 h-5"
                 disabled={isLoading || input === ""}
               >
-                <IconArrowElbow />
+                <IconSend />
                 <span className="sr-only">Send message</span>
               </Button>
             </TooltipTrigger>

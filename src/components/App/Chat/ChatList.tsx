@@ -13,7 +13,7 @@ export default function ChatList({ messages }: ChatList) {
   }
 
   return (
-    <div className="relative mx-auto px-4">
+    <div className="relative mx-auto px-12">
       {messages.map((message, index) => (
         <div key={index}>
           <ChatMessage message={message} />
