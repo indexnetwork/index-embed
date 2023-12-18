@@ -1,8 +1,6 @@
 import { UseChatHelpers } from "ai/react";
 
-import { Button } from "@/components/ui/button";
-import { IconArrowRight, IconLightbulb } from "@/components/ui/icons";
-import { ExternalLink } from "./ExternalLink";
+import { IconLightbulb } from "@/components/ui/icons";
 import Image from "next/image";
 
 const exampleMessages = [
@@ -28,7 +26,7 @@ export function EmptyScreen({
           alt="abstract illustration of trees"
         />
         <h1 className="text-xl font-bold">Chat with {indexName}</h1>
-        <p className="leading-normal text-xs mt-3">
+        <p className="leading-normal text-center text-xs mt-3">
           You can include your indexes by connecting your wallet
         </p>
       </div>

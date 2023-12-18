@@ -19,7 +19,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        embed: "hover:bg-accent hover:text-accent-foreground shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
+        embed:
+          "hover:bg-accent hover:text-accent-foreground shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
+        connectWallet: "bg-[#F9FAFB] text-gray-6 border-[1px] border-gray-2  hover:bg-gray-1",
       },
       size: {
         default: "h-9 px-4 py-2",
