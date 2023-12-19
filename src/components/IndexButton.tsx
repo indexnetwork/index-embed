@@ -1,6 +1,5 @@
 import App from "./App";
 import Branding from "./Branding";
-import Brand from "./svgs/Brand";
 import LogoMini from "./svgs/Logo";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";

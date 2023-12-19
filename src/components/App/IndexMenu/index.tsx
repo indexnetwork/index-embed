@@ -6,8 +6,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { CheckIcon } from "@radix-ui/react-icons";
 import { Command, CommandEmpty, CommandGroup, CommandItem } from "cmdk";
 import Image from "next/image";
 import { FC, useState } from "react";
@@ -25,7 +23,6 @@ const indexes = [
 
 const IndexMenu: FC<IndexMenuProps> = ({}) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
 
   const ownedIndexes = indexes.filter((index) => index.owned);
   const starredIndexes = indexes.filter((index) => !index.owned);
@@ -45,14 +42,11 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
             height={20}
             alt="brand logo"
           />
-          {value ? (
-            indexes.find((index) => index.value === value)?.label
-          ) : (
-            <>
-              Ceramic Network
-              <span className="text-xs font-normal">({indexes.length})</span>
-            </>
-          )}
+
+          <>
+            Ceramic Network
+            <span className="text-xs font-normal">({indexes.length})</span>
+          </>
         </Button>
       </PopoverTrigger>
       <PopoverContent align="start" className="w-[200px] p-4">
@@ -66,9 +60,8 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
               <CommandItem
                 className="cursor-pointer font-bold flex items-center gap-2 whitespace-nowrap rounded-md p-2 hover:bg-accent text-xs"
                 key={index.value}
-                value={index.value}
                 onSelect={() => {
-                  setValue(index.value);
+                  window.open("https://ceramic.network", "_blank");
                   setOpen(false);
                 }}
               >
@@ -79,12 +72,6 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
                   alt="brand logo"
                 />
                 {index.label}
-                <CheckIcon
-                  className={cn(
-                    "ml-auto h-4 w-4",
-                    value === index.value ? "opacity-100" : "opacity-0"
-                  )}
-                />
               </CommandItem>
             ))}
           </CommandGroup>
@@ -96,9 +83,8 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
               <CommandItem
                 className="cursor-pointer font-bold flex items-center gap-2 whitespace-nowrap rounded-md p-2 hover:bg-accent text-xs"
                 key={index.value}
-                value={index.value}
                 onSelect={() => {
-                  setValue(index.value);
+                  window.open("https://ceramic.network", "_blank");
                   setOpen(false);
                 }}
               >
@@ -109,12 +95,6 @@ const IndexMenu: FC<IndexMenuProps> = ({}) => {
                   alt="brand logo"
                 />
                 {index.label}
-                <CheckIcon
-                  className={cn(
-                    "ml-auto h-4 w-4",
-                    value === index.value ? "opacity-100" : "opacity-0"
-                  )}
-                />
               </CommandItem>
             ))}
           </CommandGroup>
