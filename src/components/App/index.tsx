@@ -3,7 +3,6 @@ import Chat from "./Chat";
 import ConnectWalletButton from "./ConnectWalletButton";
 import IndexMenu from "./IndexMenu";
 import UserMenu from "./UserMenu";
-import { v4 as uuidv4 } from "uuid";
 
 interface AppProps {
   isWalletConnected: boolean;
@@ -17,13 +16,9 @@ const App: FC<AppProps> = ({ isWalletConnected }) => {
         {isWalletConnected ? <UserMenu /> : <ConnectWalletButton />}
       </div>
       <Chat
-        initialMessages={[
-          { id: uuidv4(), role: "user", content: "hello" },
-          {
-            id: uuidv4(),
-            role: "assistant",
-            content: "To integrate Ceramic with Lit Protocol, you can use the Lit's Ceramic SDK. Here are the steps:\n\nCreate a new yarn project:",
-          },
+        indexes={[
+          "kjzl6kcym7w8y5j9a11ssikgz7f1gcr5h40yeyp9e7nf41wxo6qv44lezjur20b",
+          "kjzl6kcym7w8y7zvi7lvn12vioylmcbv0awup1xj9in1qb4kxp94569hjhx93s5",
         ]}
       />
     </div>

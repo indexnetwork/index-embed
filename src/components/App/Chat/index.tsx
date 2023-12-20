@@ -30,7 +30,6 @@ const Chat: FC<ChatProps> = ({
   if (!id) {
     id = chatId;
   }
-  
   const {
     messages,
     append,
