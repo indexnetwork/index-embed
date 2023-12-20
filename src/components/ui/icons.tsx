@@ -342,12 +342,25 @@ function IconCopy({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      className={cn("h-4 w-4", className)}
+      fill="none"
+      className={cn("h-5 w-5", className)}
       {...props}
     >
-      <path d="M216 32H88a8 8 0 0 0-8 8v40H40a8 8 0 0 0-8 8v128a8 8 0 0 0 8 8h128a8 8 0 0 0 8-8v-40h40a8 8 0 0 0 8-8V40a8 8 0 0 0-8-8Zm-56 176H48V96h112Zm48-48h-32V88a8 8 0 0 0-8-8H96V48h112Z" />
+      <g
+        stroke="#475569"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        clipPath="url(#a)"
+      >
+        <path d="M15.833 7.813H9.271c-.806 0-1.459.652-1.459 1.458v6.562c0 .806.653 1.459 1.459 1.459h6.562c.806 0 1.459-.653 1.459-1.459V9.271c0-.806-.653-1.459-1.459-1.459Z" />
+        <path d="M4.895 12.188h-.73a1.458 1.458 0 0 1-1.458-1.459V4.167a1.458 1.458 0 0 1 1.458-1.459h6.563a1.458 1.458 0 0 1 1.458 1.459v.729" />
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path fill="#fff" d="M1.25 1.25h17.5v17.5H1.25z" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }

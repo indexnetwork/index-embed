@@ -35,7 +35,7 @@ export function EmptyScreen({
           <div
             key={message.message}
             onClick={() => setInput(message.message)}
-            className="p-3 bg-gray-7 basis-1/2 rounded-lg cursor-pointer hover:bg-gray-1 font-medium flex gap-4"
+            className="p-3 bg-gray-7 basis-1/2 rounded-lg cursor-pointer hover:bg-gray-1 font-medium flex gap-2"
           >
             <IconLightbulb className="" />
             <span className="text-xs basis-3/4">{message.message}</span>

@@ -54,9 +54,9 @@ export function ChatForm({
           onChange={(e) => setInput(e.target.value)}
           placeholder={`Ask to ${indexName}`}
           spellCheck={false}
-          className="w-full border-black resize-none z-50 bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
+          className="w-full border-black resize-none bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
         />
-        <div className="absolute right-0 top-3 sm:right-4 max-h-5">
+        <div className="absolute right-0 bottom-[15%] sm:right-4 max-h-5">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
