@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { IconSend } from "@/components/ui/icons";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Tooltip,
   TooltipContent,
@@ -8,7 +9,6 @@ import {
 import { useEnterSubmit } from "@/lib/hooks/use-enter-submit";
 import { UseChatHelpers } from "ai/react";
 import * as React from "react";
-import Textarea from "react-textarea-autosize";
 
 export interface ChatFormProps
   extends Pick<UseChatHelpers, "input" | "setInput"> {
@@ -44,17 +44,17 @@ export function ChatForm({
       }}
       ref={formRef}
     >
-      <div className="relative flex flex-col w-full overflow-hidden max-h-10 text-gray-5 grow bg-background sm:rounded-lg sm:border sm:border-gray-2 sm:focus-within:border-gray-4">
+      <div className="relative flex flex-col max-h-16 w-full text-gray-5 grow bg-background sm:rounded-lg sm:border sm:border-gray-2 sm:focus-within:border-gray-4">
         <Textarea
           ref={inputRef}
           tabIndex={0}
           onKeyDown={onKeyDown}
-          rows={1}
+          rows={3}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={`Ask to ${indexName}`}
           spellCheck={false}
-          className="min-h-[40px] w-full border-black resize-none bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
+          className="w-full border-black resize-none z-50 bg-transparent px-4 py-2 focus-within:outline-none sm:text-sm"
         />
         <div className="absolute right-0 top-3 sm:right-4 max-h-5">
           <Tooltip>

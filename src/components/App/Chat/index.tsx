@@ -30,6 +30,7 @@ const Chat: FC<ChatProps> = ({
   if (!id) {
     id = chatId;
   }
+  
   const {
     messages,
     append,
@@ -53,9 +54,9 @@ const Chat: FC<ChatProps> = ({
       if (response.status === 401) {
         toast.error(response.statusText);
       }
-      console.log(response);
     },
   });
+
   return (
     <>
       <div className={cn("pb-[64px] h-full pt-4 md:pt-10", className)}>
