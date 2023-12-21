@@ -1,6 +1,6 @@
 "use client";
 
-import { API_ENDPOINTS, apiUrl } from "@/lib/constants";
+import { apiUrl } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useChat, type Message } from "ai/react";
 import { FC, useState } from "react";
@@ -24,6 +24,36 @@ const Chat: FC<ChatProps> = ({
   initialMessages,
   className,
 }) => {
+  const [editingMessage, setEditingMessage] = useState<Message | undefined>();
+  const [editingIndex, setEditingIndex] = useState<number | undefined>();
+  const [editInput, setEditInput] = useState<string>("");
+
+  const handleEditClick = (message: Message, indexOfMessage: number) => {
+    setEditingMessage(message);
+    setEditingIndex(indexOfMessage);
+    setEditInput(message.content);
+  };
+
+  const handleSaveEdit = async () => {
+    if (editingMessage) {
+      const messagesBeforeEdit = messages.slice(0, editingIndex);
+
+      const newMessage = {
+        ...editingMessage,
+        content: editInput,
+      };
+
+      setMessages(messagesBeforeEdit);
+      setEditingMessage(undefined);
+      setEditInput("");
+      await append({
+        id,
+        content: newMessage.content,
+        role: "user",
+      });
+    }
+  };
+
   const {
     messages,
     append,
@@ -49,14 +79,21 @@ const Chat: FC<ChatProps> = ({
       }
     },
   });
-  console.log(messages,"chat");
 
   return (
     <>
       <div className={cn("pb-[64px] h-full pt-4 md:pt-10", className)}>
         {messages.length ? (
           <>
-            <ChatList messages={messages} />
+            <ChatList
+              messages={messages}
+              handleEditClick={handleEditClick}
+              editingMessage={editingMessage}
+              setEditInput={setEditInput}
+              editInput={editInput}
+              handleSaveEdit={handleSaveEdit}
+              editingIndex={editingIndex}
+            />
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
         ) : (

@@ -342,8 +342,9 @@ function IconCopy({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={18}
+      height={18}
       fill="none"
-      className={cn("h-5 w-5", className)}
       {...props}
     >
       <g
@@ -369,12 +370,18 @@ function IconCheck({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      className={cn("h-4 w-4", className)}
+      width={20}
+      height={20}
+      fill="none"
       {...props}
     >
-      <path d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z" />
+      <path
+        stroke="#0F172A"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m16.667 5-9.166 9.167L3.334 10"
+      />
     </svg>
   );
 }
@@ -397,12 +404,18 @@ function IconClose({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      className={cn("h-4 w-4", className)}
+      width={20}
+      height={20}
+      fill="none"
       {...props}
     >
-      <path d="M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128 50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128Z" />
+      <path
+        stroke="#0F172A"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M15 5 5 15M5 5l10 10"
+      />
     </svg>
   );
 }
@@ -411,18 +424,25 @@ function IconEdit({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={15}
+      height={16}
       fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className={cn("h-4 w-4", className)}
       {...props}
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-      />
+      <g clipPath="url(#a)">
+        <path
+          stroke="#475569"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M10.625 2.375a1.768 1.768 0 0 1 2.5 2.5l-8.438 8.437-3.437.938.938-3.438 8.437-8.437Z"
+        />
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path fill="#fff" d="M0 .5h15v15H0z" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }

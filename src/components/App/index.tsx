@@ -1,15 +1,14 @@
 "use client";
-import { FC } from "react";
+import { apiUrl } from "@/lib/constants";
+import { useChat } from "ai/react";
+import { FC, useState } from "react";
+import toast from "react-hot-toast";
+import { v4 as uuidv4 } from "uuid";
 import Chat from "./Chat";
+import ResetButton from "./Chat/ResetButton";
 import ConnectWalletButton from "./ConnectWalletButton";
 import IndexMenu from "./IndexMenu";
 import UserMenu from "./UserMenu";
-import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
-import { useChat } from "ai/react";
-import { apiUrl } from "@/lib/constants";
-import toast from "react-hot-toast";
-import ResetButton from "./Chat/ResetButton";
 
 interface AppProps {
   isWalletConnected: boolean;
@@ -35,7 +34,7 @@ const App: FC<AppProps> = ({ isWalletConnected }) => {
       }
     },
   });
-  console.log(messages, "app");
+
   return (
     <div className="min-h-[528px]">
       <div className="flex justify-between max-h-[32px]">
