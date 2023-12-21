@@ -113,12 +113,12 @@ export function ChatMessage({
         )}
 
         {editingMessage?.id && index === editingIndex ? (
-          <div className="flex items-center gap-3 px-12 justify-end transition-opacity group-hover:opacity-100 md:absolute md:-right-10 md:-top-2 md:opacity-0">
+          <div className="flex items-center gap-3 px-12 justify-end transition-all md:absolute md:-right-10 md:-top-2">
             <Button
               onClick={handleSaveEdit}
               size="icon"
               variant="ghost"
-              className=" h-6 w-6"
+              className="h-6 w-6"
             >
               <IconCheck />
               <span className="sr-only">Save edit</span>
