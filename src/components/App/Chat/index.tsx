@@ -1,6 +1,6 @@
 "use client";
 
-import { API_ENDPOINTS } from "@/lib/constants";
+import { API_ENDPOINTS, apiUrl } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useChat, type Message } from "ai/react";
 import { FC, useState } from "react";
@@ -9,9 +9,7 @@ import ChatList from "./ChatList";
 import { ChatPanel } from "./ChatPanel";
 import { ChatScrollAnchor } from "./ChatScrollAnchor";
 import { EmptyScreen } from "./EmptyScreen";
-import { v4 as uuidv4 } from "uuid";
 
-const apiUrl = `https://index.network/api/chat_stream`;
 export interface ChatProps extends React.ComponentProps<"div"> {
   initialMessages?: Message[];
   id?: string;
@@ -26,11 +24,6 @@ const Chat: FC<ChatProps> = ({
   initialMessages,
   className,
 }) => {
-  const [chatId, setChatId] = useState<string>(uuidv4());
-  if (!id) {
-    id = chatId;
-  }
-  
   const {
     messages,
     append,
@@ -56,6 +49,7 @@ const Chat: FC<ChatProps> = ({
       }
     },
   });
+  console.log(messages,"chat");
 
   return (
     <>

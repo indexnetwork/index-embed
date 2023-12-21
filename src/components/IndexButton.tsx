@@ -16,7 +16,7 @@ export default function IndexButton() {
         </Button>
       </DialogTrigger>
       <DialogContent>
-        <App isWalletConnected={false} />
+        <App isWalletConnected={true} />
         <Branding />
       </DialogContent>
     </Dialog>
