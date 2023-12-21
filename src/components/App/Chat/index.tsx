@@ -84,7 +84,7 @@ const Chat: FC<ChatProps> = ({
     <>
       <div className={cn("pb-[64px] h-full pt-4 md:pt-10", className)}>
         {messages.length ? (
-          <>
+          <div className="max-h-[85%] overflow-y-scroll overflow-x-hidden">
             <ChatList
               messages={messages}
               handleEditClick={handleEditClick}
@@ -95,7 +95,7 @@ const Chat: FC<ChatProps> = ({
               editingIndex={editingIndex}
             />
             <ChatScrollAnchor trackVisibility={isLoading} />
-          </>
+          </div>
         ) : (
           <EmptyScreen setInput={setInput} />
         )}

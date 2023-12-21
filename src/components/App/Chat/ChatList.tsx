@@ -40,9 +40,9 @@ export default function ChatList({
             index={index}
             editingIndex={editingIndex}
           />
-          {index < messages.length - 1 && <Separator className="my-4" />}
         </div>
       ))}
+      <div className="w-full h-16" ></div>
     </div>
   );
 }
