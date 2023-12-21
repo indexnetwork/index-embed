@@ -35,12 +35,11 @@ export function ChatPanel({
     <div className="fixed inset-x-0 bottom-0 w-full animate-in duration-300 ease-in-out dark:from-background/10 dark:from-10% dark:to-background/80 peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
       <ButtonScrollToBottom />
       <div className="mx-auto sm:max-w-2xl sm:px-4">
-        <div className="flex items-center justify-center h-12">
+        <div className="flex items-center justify-center">
           {isLoading ? (
             <Button
-              variant="outline"
+              className="px-2" variant="connectWallet"
               onClick={() => stop()}
-              className="bg-background"
             >
               <IconStop className="mr-2" />
               Stop generating
@@ -48,15 +47,15 @@ export function ChatPanel({
           ) : (
             messages?.length >= 2 && (
               <div className="flex space-x-2">
-                <Button variant="outline" onClick={() => reload()}>
+                <Button className="px-2" variant="connectWallet" onClick={() => reload()}>
                   <IconRefresh className="mr-2" />
-                  Regenerate response
+                  Regenerate
                 </Button>
               </div>
             )
           )}
         </div>
-        <div className="py-4">
+        <div className="pt-2 pb-4">
           <ChatForm
             onSubmit={async (value) => {
               await append({
