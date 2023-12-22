@@ -82,9 +82,9 @@ const Chat: FC<ChatProps> = ({
 
   return (
     <>
-      <div className={cn("pb-[64px] h-full pt-4 md:pt-10", className)}>
+      <div className={cn("pb-[64px] relative h-full pt-4 md:pt-10", className)}>
         {messages.length ? (
-          <div className="max-h-[85%] overflow-y-scroll overflow-x-hidden">
+          <div className="h-full overflow-y-scroll overflow-x-hidden">
             <ChatList
               messages={messages}
               handleEditClick={handleEditClick}

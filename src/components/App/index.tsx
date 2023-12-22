@@ -36,7 +36,7 @@ const App: FC<AppProps> = ({ isWalletConnected }) => {
   });
 
   return (
-    <div className="min-h-[528px]">
+    <div className="h-[528px]">
       <div className="flex justify-between max-h-[32px]">
         <IndexMenu />
         <div className="flex items-center gap-2">

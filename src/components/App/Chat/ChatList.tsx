@@ -27,7 +27,7 @@ export default function ChatList({
   }
 
   return (
-    <div className="relative mx-auto">
+    <div className="mx-auto">
       {messages.map((message, index) => (
         <div key={index}>
           <ChatMessage
@@ -42,7 +42,7 @@ export default function ChatList({
           />
         </div>
       ))}
-      <div className="w-full h-16" ></div>
+      <div className="w-full h-8" ></div>
     </div>
   );
 }
