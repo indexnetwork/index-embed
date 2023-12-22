@@ -82,7 +82,7 @@ const Chat: FC<ChatProps> = ({
 
   return (
     <>
-      <div className={cn("pb-[64px] relative h-full pt-4 md:pt-10", className)}>
+      <div className={cn("pb-[64px] relative h-full pt-4", className)}>
         {messages.length ? (
           <div className="h-full overflow-y-scroll overflow-x-hidden">
             <ChatList

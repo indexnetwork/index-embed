@@ -63,7 +63,7 @@ export function ChatForm({
                 type="submit"
                 variant="ghost"
                 size="sm"
-                className="p-0 h-5 disabled:opacity-100"
+                className="p-0 h-5 disabled:opacity-100 w-5"
                 disabled={isLoading || input === ""}
               >
                 <IconSend

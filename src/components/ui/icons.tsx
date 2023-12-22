@@ -534,8 +534,8 @@ function IconSend({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={20}
-      height={20}
+      width={17.5}
+      height={17.5}
       className={className}
       {...props}
       fill="currentColor"
