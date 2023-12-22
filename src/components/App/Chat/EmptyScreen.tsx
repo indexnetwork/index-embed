@@ -30,7 +30,7 @@ export function EmptyScreen({
           You can include your indexes by connecting your wallet
         </p>
       </div>
-      <div className="mb-6 sm:flex gap-2">
+      <div className="mb-6 hidden tall:sm:flex gap-2">
         {exampleMessages.map((message) => (
           <div
             key={message.message}

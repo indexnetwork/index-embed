@@ -42,7 +42,6 @@ export default function ChatList({
           />
         </div>
       ))}
-      <div className="w-full h-8" ></div>
     </div>
   );
 }
